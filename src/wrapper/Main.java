@@ -6,5 +6,9 @@ public class Main {
         wrapperObj.useAutoboxAndUnbox();
         wrapperObj.useValueOf();
         wrapperObj.useCharacterWrapper();
+        wrapperObj.useEscapeSeq();
+        wrapperObj.useStrings();
+        wrapperObj.usePopularStringMethods();
+        
     }
 }
