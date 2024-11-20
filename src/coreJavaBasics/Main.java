@@ -11,5 +11,7 @@ public class Main {
         index.mixedDivision();
         index.mixedDivision2();
         index.casting();
+        index.constants();
+        index.cafeProducts();
     }
 }
