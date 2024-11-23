@@ -13,5 +13,6 @@ public class Main {
         operators.useTernary();
         operators.useOrderPrecedence();
         operators.useModulus();
+        operators.findStringSize();
     }
 }

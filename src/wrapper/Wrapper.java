@@ -1,6 +1,9 @@
 package wrapper;
 
 import java.io.PrintStream;
+import java.sql.SQLOutput;
+import java.util.Scanner;
+import java.util.StringJoiner;
 
 public class Wrapper {
     public Wrapper() {
@@ -134,4 +137,206 @@ public class Wrapper {
 
 
     }
+
+    public void useMoreStringMethods() {
+        String str = "  Hello World  ";
+        System.out.println("Character at index 4: " + str.charAt(4));
+        //extracts a substring at the start including the first number and excluding the last one
+        System.out.println("Substring (2, 8): " + str.substring(2, 8));
+
+        System.out.println("To lower case: " + str.toLowerCase());
+        System.out.println("To uppercase: " + str.toUpperCase());
+
+        // adds to the end of the string
+        System.out.println("Concatenation: " + str.concat("!!!"));
+
+        // removes leading and trailing white space characters aka tab and spaces
+        System.out.println("Trim: " + str.trim());
+
+        // removes leading and trailing white space including unicode spaces
+        System.out.println("Strip (JDK 11): " + str.strip());
+
+        // checks if the string matches the specified regular expression
+        System.out.println(("Matches regex '.*World.*': " + str.matches(".*World.*")));
+
+        // replaces all occurrences of the specified character with another character
+        System.out.println("Replace 'o' with 'X': " + str.replace("o", "X"));
+
+        // replaces all substrings matching thr given regular expression with the given replacement
+        System.out.println("Replace all white spaces with '_': " + str.replaceAll("\\s", "_"));
+
+        // splits the string into an array of substrings based on the specified delimiter
+        String str2 = "Java Python\tC++ Ruby";
+        String[] parts = str2.split("\\s+"); // split using white space as a delimiter
+        System.out.println("Split result: ");
+        // enhances for loop - can use with arrays and no index
+        for (String part : parts) {
+            System.out.println(part); // outputs each word
+        }
+    }
+
+    public void useScanner() {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Enter First  name: ");
+        String firstName = input.nextLine();
+
+        System.out.println("Enter Last name: ");
+        String lastName = input.nextLine();
+
+        System.out.println("Welcome " + firstName + " " + lastName);
+
+    }
+
+    public void convertStringToNumber() {
+        // String to primitive using parsing methods
+        String intString = "42";
+        System.out.println("Result: " + intString + 10);
+        //  System.out.println("int result: " + num);
+        int intValue = Integer.parseInt(intString);
+        System.out.println("Primitive int: " + intValue);
+        int num = intValue + 10;
+        System.out.println("int result: " + num);
+
+        String doubleString = "3.14";
+        double doubleValue = Double.parseDouble(doubleString);
+        System.out.println("Primitive double: " + doubleValue);
+
+        // String to wrapper object using valueOf methods
+        Float intWrapper = Float.valueOf(intString);
+        System.out.println("Integer wrapper: " + intWrapper);
+        System.out.println("Integer wrapper: " + intWrapper.getClass());
+    }
+
+    public void convertNumberToString() {
+        // Convert primitive numbers to String
+        int intValue = 42;
+        String intString = Integer.toString(intValue);
+        System.out.println("String from int: " + intString);
+        System.out.println("Integer wrapper: " + intString.getClass());
+
+        // Convert wrapper objects to String
+        Integer intWrapper = 123;
+        System.out.println("Integer wrapper: " + intWrapper.getClass());
+
+        String intWrapperString = intWrapper.toString();
+        System.out.println("String from Integer wrapper: " + intWrapperString);
+        System.out.println("Integer wrapper: " + intWrapperString.getClass());
+    }
+
+    public void useStringBuffer() {
+        StringBuffer sb1 = new StringBuffer();  //capacity 16 default
+        System.out.println("Default capacity:  " + sb1.capacity());
+
+        StringBuffer sb2 = new StringBuffer(10);
+        System.out.println("Default capacity:  " + sb2.capacity());
+
+        StringBuffer sb3 = new StringBuffer("Hello World");
+        System.out.println("Default capacity:  " + sb3.capacity());
+
+        //Append
+        sb3.append(" and have a great day");
+        System.out.println("After append: " + sb3);
+
+        //Insert
+        sb3.insert(23, "Beautiful ");
+        System.out.println("After insert: " + sb3);
+
+        //Replace
+        sb3.replace(23, 32, "Amazing");
+        System.out.println("After insert: " + sb3);
+
+        //Reverse
+        sb3.reverse();
+        System.out.println("After insert: " + sb3);
+        sb3.reverse();
+        System.out.println("After insert: " + sb3);
+
+        //Length
+        System.out.println("Length: " + sb3.length());
+
+        // Capacity
+        System.out.println("Capacity: " + sb3.capacity());
+
+        //Modifying and ensure capacity
+        sb3.ensureCapacity(50);
+        System.out.println("Capacity after ensureCapacity(50): " + sb3.capacity());
+
+    }
+
+    public void useStringJoiner() {
+        //Create StringJoiner using a delimiter
+        StringJoiner joiner = new StringJoiner(",");
+        //Adding elements
+        joiner.add("Java");
+        joiner.add("Python");
+        joiner.add("C++");
+
+        System.out.println("Joined String: " + joiner);
+
+        // Using StringJoiner with a prefix and suffix
+        StringJoiner fancyJoiner = new StringJoiner(",", "[[[[", "]");
+        fancyJoiner.add("Java");
+        fancyJoiner.add("Python");
+        fancyJoiner.add("C++");
+
+        System.out.println("Fancy Joined String: " + fancyJoiner);
+
+
+    }
+
+    public void useFormatingToConsole() {
+        // System.out.format() Formats and directly prints to the console.
+        System.out.format("System.out.format: Name: %s, Age: %d, Salary: %.2f%n", "Alice", 30, 150000.345);
+
+        // Works the same as System.out.format, shorthand for formatted printing.
+        System.out.printf("System.out.format: Name: %s, Age: %d, Salary: %.2f%n", "Bob", 35, 150000.345);
+
+        //Returns a formatted string instead of printing directly.
+        String formattedString = String.format("String.format: Name: %s, Age: %d, Salary: %.2f", "Charlie", 40, 60000.33);
+        System.out.println(formattedString);
+
+    }
+
+    public void useMathClass() {
+
+//        int a = 10, b = -20;
+//        System.out.println(Math.abs(a)); // 10
+//        System.out.println(Math.abs(b)); // 20
+//        System.out.println(Math.max(a, b)); // 10
+//        System.out.println(Math.min(a, b)); // -20
+//
+//        System.out.println(Math.exp(1));
+//        System.out.println(Math.log(2.71));
+//        System.out.println(Math.pow(2,3));
+//        System.out.println(Math.sqrt(4));
+//        System.out.println(Math.sqrt(10.5));
+
+        double d = 83.67;
+        System.out.println(Math.ceil(d));  // return double & rounded up to its nearest integer
+        System.out.println(Math.floor(d)); // return double and rounded down to its nearest integer
+        System.out.println(Math.rint(d)); // return double but find the closest integers for these double numbers
+        //Math.round() It is used to round of the decimal numbers to the nearest value.
+        System.out.println(Math.round(d));  // 84;
+        double a = 1.878;
+        System.out.println(Math.round(a));  // 2
+        // value equals to 5 after decimal
+        double b = 1.5;
+        System.out.println(Math.round(b));  // 2
+        // value less than 5 after decimal
+        double c = 1.34;
+        System.out.println(Math.round(c));  // 1
+
+        //Math.random() method
+        // generate integer number b/w 1 to 100
+        int n1 = (int) (Math.random() * 100);
+        int n2 = (int) (Math.random() * 100);
+
+        // display generated integer numbers
+        System.out.println(n1);
+        System.out.println(n2);
+
+    }
+
+
 }

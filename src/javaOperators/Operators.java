@@ -1,5 +1,9 @@
 package javaOperators;
 
+import org.w3c.dom.ls.LSOutput;
+
+import java.sql.SQLOutput;
+
 public class Operators {
     public void useArtithmeticOperators() {
         int x = 10;
@@ -127,5 +131,57 @@ public class Operators {
         } else {
             System.out.println(number + " is odd.");
         }
+    }
+
+
+    public void findStringSize() {
+        System.out.println("===============================================");
+        // scenario 1
+        String str = "Hello Java";
+        System.out.println("s1:");
+        System.out.println(str.length());
+        System.out.println(str.isEmpty());
+
+        // scenario 2 task a
+        String str1 = "Hello";
+        String str2 = "hello";
+        System.out.println("s2ta:");
+        System.out.println(str1.equals(str2));
+        System.out.println(str1.equalsIgnoreCase(str2));
+
+        //task b
+        String fruit1 = "Apple";
+        String fruit2 = "Banana";
+        System.out.println("tb:");
+        System.out.println(fruit1.compareTo(fruit2));
+
+        //task c
+        String subject = "Programming";
+        System.out.println("tc:");
+        System.out.println(subject.startsWith("Pro") && subject.endsWith("ing"));
+
+        //scenario 3 task a
+        String word = "Character";
+        System.out.println("s3ta:");
+        System.out.println(word.indexOf('a'));
+
+        //task b
+        String word2 = "Character";
+        System.out.println("tb:");
+        System.out.println(word.lastIndexOf('a'));
+
+        //task c
+        String word3 = "LearningJava";
+        System.out.println("tc:");
+        System.out.println(word3.contains("Java"));
+
+        String test = " ";
+        System.out.println("isempty:");
+        System.out.println(test.isEmpty());
+
+        String word1 = "Developers";
+        System.out.println("contains:");
+        System.out.println(word1.contains("Dev") && word1.startsWith("De"));
+
     }
 }
