@@ -1,4 +1,4 @@
-package operatorAndNumbers;
+package operatorAndNumbersPA;
 
 import java.util.Scanner;
 

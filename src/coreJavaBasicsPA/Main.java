@@ -1,6 +1,6 @@
-package coreJavaBasics;
+package coreJavaBasicsPA;
 
-import coreJavaBasics.com.perscholas.java_basics.IndexClass;
+import coreJavaBasicsPA.com.perscholas.java_basics.IndexClass;
 
 public class Main {
     public static void main(String[] args) {

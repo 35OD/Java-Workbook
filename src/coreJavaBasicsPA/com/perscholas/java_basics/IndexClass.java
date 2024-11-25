@@ -1,6 +1,4 @@
-package coreJavaBasics.com.perscholas.java_basics;
-
-import java.text.DecimalFormat;
+package coreJavaBasicsPA.com.perscholas.java_basics;
 
 public class IndexClass {
     public void summation() {
