@@ -28,7 +28,7 @@ public class Customer {
             customers[i - 1] = firstName + " " + lastName;
 
         }
-
+        sc.close();
     }
 
     public void displayCustomerData() {
