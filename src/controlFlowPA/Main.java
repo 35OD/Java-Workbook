@@ -7,8 +7,8 @@ public class Main {
 //        myObj.question2();
 //        myObj.question3();
 //        myObj.question4();
-//        myObj.question5();
+        myObj.question5();
 //        myObj.question6();
-        myObj.question7();
+//        myObj.question7();
     }
 }

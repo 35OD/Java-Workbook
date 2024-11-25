@@ -61,6 +61,8 @@ public class Questions {
             System.out.println("C");
         } else if (score >= 60 && score <= 69) {
             System.out.println("D");
+        } else if (score < 0 || score > 100) {
+            System.out.println("Out of range.");
         } else {
             System.out.println("F");
         }
