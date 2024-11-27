@@ -5,7 +5,9 @@ public class Main {
         Questions obj = new Questions();
 //        obj.question1();
 //        obj.question2();
-        obj.question3();
-
+//        obj.question3();
+//        obj.question4();
+//        obj.question5();
+        obj.question6();
     }
 }
