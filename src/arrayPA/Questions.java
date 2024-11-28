@@ -9,8 +9,9 @@ public class Questions {
     public void question1() {
         int[] array = {1, 2, 3};
         for (int arr : array) {
-            System.out.println(arr);
+            System.out.print(arr + " ");
         }
+
     }
 
     // Write a program that returns the middle element in an array. Give the following values to the integer array: {13, 5, 7, 68, 2} and produce the following output: 7
@@ -26,7 +27,10 @@ public class Questions {
         System.out.println(Arrays.toString(colours).length());
 
         String[] coloursClone = colours.clone();
-        System.out.println(Arrays.toString(coloursClone));
+
+        for (String colour : coloursClone) {
+            System.out.print(colour + " ");
+        }
 
 
     }
@@ -37,9 +41,9 @@ public class Questions {
 
         System.out.println("First index: " + numbers[0]);
         System.out.println("Last index: " + numbers[numbers.length - 1]);
-
-        System.out.println(numbers[numbers.length]);
-        numbers[5] = 6;
+//
+//        System.out.println(numbers[numbers.length]);
+//        numbers[5] = 6;
 
     }
 
@@ -47,7 +51,10 @@ public class Questions {
     public void question5() {
         int[] num = new int[5];
         for (int i = 0; i < num.length; i++) {
-            System.out.println(num[i] = i);
+            num[i] = i;
+        }
+        for (int n : num) {
+            System.out.print(n + " ");
         }
     }
 
@@ -58,11 +65,73 @@ public class Questions {
             num[i] = i * 2;
 //            System.out.println(num[i] = i * 2);
         }
-        System.out.println(Arrays.toString(num));
+        for (int n : num) {
+            System.out.print(n + " ");
+        }
     }
 
     // Write a program where you create an array of 5 elements. Loop through the array and print the value of each element, except for the middle (index 2) element.
     public void question7() {
+        int[] num = new int[5];
+        for (int i = 0; i < num.length; i++) {
+            if (i != 2) {
+                num[i] = i;
+            }
+        }
+        for (int n : num) {
+            System.out.print(n + " ");
+        }
+    }
 
+    // Write a program that creates a String array of 5 elements and swaps the first element with the middle element without creating a new array.
+    public void question8() {
+        int[] numbers = {5, 10, 15, 20, 25};
+
+        System.out.println("First index: " + numbers[0]);
+        System.out.println("Middle index: " + numbers[numbers.length - 3]);
+
+        numbers[0] = numbers[2];
+        System.out.println("New first index: " + numbers[0]);
+    }
+
+    // Write a program to sort the following int array in ascending order: {4, 2, 9, 13, 1, 0}. Print the array in ascending order, and print the smallest and the largest element of the array. The output will look like the following:
+    //Array in ascending order: 0, 1, 2, 4, 9, 13
+    //The smallest number is 0
+    //The biggest number is 13
+    public void question9() {
+        int[] num = {4, 2, 9, 13, 1, 0};
+        Arrays.sort(num);
+        for (int n : num) {
+            System.out.print(n + " ");
+        }
+        System.out.println("\nThe smallest number is: " + num[0]);
+        System.out.println("The biggest number is: " + num[5]);
+    }
+
+    // Create an array that includes an integer, 3 strings, and 1 double. Print the array.
+    public void question10() {
+        Object[] array = {1, "Hello", "Hi", "Hey", 3.14};
+
+        for (Object arr : array) {
+            System.out.print(arr + " ");
+        }
+    }
+
+    //  Write some Java code that asks the user how many favorite things they have. Based on their answer, you should create a String array of the correct size. Then ask the user to enter the things and store them in the array you created. Finally, print out the contents of the array.
+    public void question11() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("How many favourite things do you have?");
+        int amount = sc.nextInt();
+        sc.nextLine();
+        String[] faveItems = new String[amount];
+
+        for (int i = 0; i < amount; i++) {
+            System.out.println("Enter your favourite thing: #" + (i + 1) + ": ");
+            faveItems[i] = sc.nextLine();
+        }
+        System.out.println("Your favorite things are:");
+        for (String item : faveItems) {
+            System.out.print(item + " ");
+        }
     }
 }
