@@ -2,18 +2,24 @@ package encapInheritance.model;
 
 public class Book {
 
+    //fields
     private String title;
     private String author;
     private int availableCopies;
 
-    // constructor- it will have uppercase first letter because it is calling the Book class
+    //Constructor
     public Book(String title, String author, int availableCopies) {
         this.title = title;
         this.author = author;
         this.availableCopies = availableCopies;
     }
 
-    // checks out library book availability
+
+    /**
+     * Method checks out library book
+     *
+     * @return
+     */
     public boolean borrowBook() {
         if (availableCopies > 0) {
             availableCopies--;
@@ -26,9 +32,7 @@ public class Book {
         availableCopies++;
     }
 
-
-    // getter/ setter methods
-
+    //getters/setters
     public String getTitle() {
         return title;
     }
@@ -53,8 +57,6 @@ public class Book {
         this.availableCopies = availableCopies;
     }
 
-    // to string method
-
     @Override
     public String toString() {
         return "Book{" +
@@ -63,6 +65,4 @@ public class Book {
                 ", availableCopies=" + availableCopies +
                 '}';
     }
-
-
 }

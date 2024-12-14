@@ -2,33 +2,36 @@ package encapInheritance.model;
 
 import java.util.Objects;
 
-
-// this class defines a username and the user's email
+/**
+ * This class defines a username and the user's email
+ */
 public class User {
 
-    // encapsulated fields for user details
+    //Encapsulated fields for user details
+
     private String userName;
     private String email;
 
-    // need empty constructor for extending
     public User() {
     }
 
-
-    // constructor to init the user details
+    //Constructor to initialize user details
     public User(String userName, String email) {
         this.userName = userName;
         this.email = email;
     }
 
-    // display user details
+    /**
+     * Method displays User details
+     */
     public void displayDetails() {
         System.out.println("Username: " + userName);
         System.out.println("Email: " + email);
     }
 
 
-    // getters and setters
+    //Getters and Setters
+
     public String getUserName() {
         return userName;
     }
@@ -47,14 +50,15 @@ public class User {
 
     @Override
     public boolean equals(Object o) {
+        if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return Objects.equals(userName, user.userName) && Objects.equals(email, user.email);
+        return Objects.equals(getUserName(), user.getUserName()) && Objects.equals(getEmail(), user.getEmail());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userName, email);
+        return Objects.hash(getUserName(), getEmail());
     }
 
     @Override
